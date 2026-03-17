@@ -68,22 +68,7 @@ app.get('/api/skills', async (req, res) => {
 });
 
 // GET Experience
-const DUMMY_EXPERIENCE = [
-  {
-    id: 1, role: 'Full Stack Developer', company: 'Freelance',
-    start_date: '2023-01-01', end_date: null,
-    description: 'Designing and building end-to-end web applications from database schema to production deployment.',
-    tech_stack: ['Next.js', 'Node.js', 'PostgreSQL', 'Docker'],
-    commit_hash: 'a1b2c3d'
-  },
-  {
-    id: 2, role: 'Frontend Developer', company: 'Startup Co.',
-    start_date: '2022-01-01', end_date: '2022-12-31',
-    description: 'Built responsive UI components and integrated REST APIs for a SaaS platform.',
-    tech_stack: ['React', 'TypeScript', 'Tailwind'],
-    commit_hash: 'e4f5g6h'
-  }
-];
+
 app.get('/api/experience', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM experience ORDER BY start_date DESC');
